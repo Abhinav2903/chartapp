@@ -26,6 +26,7 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
+  final List<double> xvalues = [0, 1, 2, 3, 4, 5, 6, 8.5];
   final List<double> yValues = [
     1.3,
     1,
@@ -43,6 +44,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   // MyHomePage val = new MyHomePage();
   // List<FlSpot> spots =
+  var i = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +56,17 @@ class _MyHomePageState extends State<MyHomePage> {
               lineBarsData: [
             LineChartBarData(
                 spots: widget.yValues.asMap().entries.map((e) {
-                  return FlSpot(e.key.toDouble(), e.value);
+                  // return FlSpot(e.key.toDouble(), e.value);
+                  var y = e.value;
+
+                  // var x = e.key.toDouble();
+                  var x = widget.xvalues.asMap().entries.map((f) {
+                    var x = f.value;
+                    return x.toDouble();
+                  });
+                  i = i + 1;
+
+                  return FlSpot(x.elementAt(i), y);
                 }).toList(),
                 isCurved: true,
                 colors: [
