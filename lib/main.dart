@@ -26,7 +26,7 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
-  final List<double> xvalues = [0, 1, 2, 3, 4, 5, 6, 8.5];
+  final List<double> xvalues = [1, 2, 3, 4, 5, 6, 8.5];
   final List<double> yValues = [
     1.3,
     1,
@@ -44,7 +44,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   // MyHomePage val = new MyHomePage();
   // List<FlSpot> spots =
-  var i = 0;
+  var i = -1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
